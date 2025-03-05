@@ -11,13 +11,27 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table)
+        {
             $table->id();
-            $table->string('name');
+
+            // Clé étrangère
+            $table->foreignId('role_id')->default(1)->constrained('roles')->onDelete('restrict');
+
+            // Informations utilisateur
+            $table->string('pseudo', 50)->unique();
+            $table->string('nom', 50);
+            $table->string('prenom', 50);
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('image', 255)->default('default.jpg');
+
+            // Vérification de l'email et authentification
+            $table->timestamp('email_verified_at')->nullable()->index();
             $table->rememberToken();
+
+            // Soft delete et timestamps
+            $table->softDeletes();
             $table->timestamps();
         });
 
