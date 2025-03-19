@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('modeles', function (Blueprint $table)
         {
             $table->id();
-            $table->string('name', 100)->unique()->index();
+            $table->string('nom', 100)->unique()->index();
 
             // Clé étrangère
             $table->foreignId('marque_id')->constrained('marques')->onDelete('restrict');

@@ -43,10 +43,8 @@ return new class extends Migration
             $table->foreignId('couleur_id')->constrained('couleurs')->onDelete('restrict');
             $table->foreignId('condition_id')->constrained('conditions_vehicules')->onDelete('restrict');
 
-            // Clé unique
-            $table->unique(['user_id', 'titre', 'prix', 'kilometrage']);
-
-            // Index
+            // Indexes et contraintes
+            $table->unique(['user_id', 'titre']);
             $table->index(['marque_id', 'modele_id']);
             $table->index(['energie_id', 'transmission_id', 'type_id']);
 
