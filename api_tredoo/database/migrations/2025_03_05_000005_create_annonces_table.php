@@ -48,11 +48,8 @@ return new class extends Migration
             $table->enum('couleur', ['blanc', 'noir', 'gris', 'argent', 'bleu', 'rouge', 'vert', 'marron', 'beige', 'jaune', 'autre'])->default('autre');
             $table->enum('condition', ['sans_frais_a_prevoir', 'roulante_reparation_a_prevoir', 'non_roulante', 'accidentee', 'pour_pieces'])->default('sans_frais_a_prevoir');
 
-            // Suppression douce pour permettre la restauration d'une annonce supprimée
-            $table->softDeletes();
-
-            // Horodatage
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

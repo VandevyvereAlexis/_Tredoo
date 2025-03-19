@@ -27,9 +27,7 @@ return new class extends Migration
             // Empêcher deux images d'avoir la même position dans une annonce
             $table->unique(['annonce_id', 'position']);
 
-            // Timestamps et suppression douce
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

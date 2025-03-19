@@ -23,11 +23,8 @@ return new class extends Migration
             $table->boolean('vu')->default(false);
             $table->text('content');
 
-            // Permettre aux utilisateurs de supprimer un message sans impacter les autres
-            $table->softDeletes();
-
-            // Horodatage
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

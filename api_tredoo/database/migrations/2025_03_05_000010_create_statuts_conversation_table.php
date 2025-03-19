@@ -25,11 +25,8 @@ return new class extends Migration
             // Empêcher qu'un utilisateur ait plusieurs statuts pour la même conversation
             $table->unique(['conversation_id', 'user_id']);
 
-            // Suppression douce pour restaurer une conversation supprimée par erreur
-            $table->softDeletes();
-
-            // Horodatage
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

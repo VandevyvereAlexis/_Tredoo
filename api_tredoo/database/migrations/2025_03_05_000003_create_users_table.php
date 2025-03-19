@@ -29,9 +29,6 @@ return new class extends Migration
             // Vérification de l'email et authentification
             $table->timestamp('email_verified_at')->nullable()->index();
             $table->rememberToken();
-
-            // Soft delete et timestamps
-            $table->softDeletes();
             $table->timestamps();
         });
 

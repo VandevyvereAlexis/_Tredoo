@@ -21,8 +21,6 @@ return new class extends Migration
             // Nom du modèle
             $table->string('name', 100)->unique()->index();
 
-            // Soft delete et timestamps
-            $table->softDeletes();
             $table->timestamps();
         });
     }

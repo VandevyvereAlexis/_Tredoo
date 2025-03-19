@@ -28,7 +28,6 @@ return new class extends Migration
             $table->unsignedBigInteger('seller_id')->nullable();
             $table->foreign('seller_id')->references('id')->on('users')->onDelete('set null');
 
-            // Horodatage
             $table->timestamps();
         });
     }

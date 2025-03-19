@@ -22,7 +22,6 @@ return new class extends Migration
             // Empêcher qu'un utilisateur ajoute la même annonce plusieurs fois
             $table->unique(['user_id', 'annonce_id']);
 
-            // Horodatage
             $table->timestamps();
         });
     }
