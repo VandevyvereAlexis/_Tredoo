@@ -32,9 +32,9 @@ return new class extends Migration
             $table->float('longitude', 10, 6)->nullable();
 
             // Clé étrangère
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('marque_id')->constrained('marques')->onDelete('restrict');
-            $table->foreignId('modele_id')->constrained('modeles')->onDelete('restrict');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->index();
+            $table->foreignId('marque_id')->constrained('marques')->onDelete('restrict')->index();
+            $table->foreignId('modele_id')->constrained('modeles')->onDelete('restrict')->index();
             $table->foreignId('energie_id')->constrained('energies')->onDelete('restrict');
             $table->foreignId('transmission_id')->constrained('transmissions')->onDelete('restrict');
             $table->foreignId('type_id')->constrained('types_vehicules')->onDelete('restrict');
