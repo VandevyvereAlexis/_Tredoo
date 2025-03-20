@@ -25,6 +25,7 @@ return new class extends Migration
             $table->unique(['annonce_id', 'position']);
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

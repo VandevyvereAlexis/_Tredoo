@@ -28,6 +28,7 @@ return new class extends Migration
 
             $table->timestamp('last_message_at')->nullable()->index();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
